@@ -17,7 +17,6 @@ class Genre(models.Model):
         return self.name
 
 
-
 class Movie(models.Model):
     title = models.CharField(max_length=255)
     description = models.TextField(validators=[MinValueValidator(1)])
@@ -25,10 +24,8 @@ class Movie(models.Model):
     genres = models.ManyToManyField(Genre, related_name="movies")
     duration = models.IntegerField()
 
-
     def __str__(self):
         return self.title
-
 
 
 class CinemaHall(models.Model):
